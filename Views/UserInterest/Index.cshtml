@@ -1,0 +1,59 @@
+﻿@model OnlineAdz.Models.UserInterest
+@{
+	ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html>
+    <h1 ><u>Ad Details</u></h1>
+    <br />
+    <img src="~/css/Images/customer2.jpg" height="20%" width="20%" />
+    
+	<head>
+		<meta name="viewport" content="width=device-width"/>
+    
+	</head>
+    
+	<body>
+	@using (Html.BeginForm("Index", "UserInterest", FormMethod.Post))
+	{
+		 <table cellpadding="4px" cellspacing="30px">
+			<br>
+			 <tr>
+                <td><h5>Email :   </h5></td>
+                <td>
+                    @Html.TextBoxFor(m => m.Email)
+                </td>
+            </tr>
+			<tr>
+                <td><h5>Category Id:   </h5></td>
+                <td>
+                    @Html.TextBoxFor(m => m.CategoryId)
+                </td>
+            </tr>
+			<tr>
+                <td><h5>Ad Name:   </h5></td>
+                <td>
+                    @Html.TextBoxFor(m => m.AdName)
+                </td>
+            </tr>
+			<tr>
+                <td><h5>Ad Desc.:   </h5></td>
+                <td>
+                    @Html.TextBoxFor(m => m.AdDesc)
+                </td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+           
+            <tr>
+                <td ></td>
+                <td><input type="submit" value="Submit" style="background-color:blue;color:white;border:none;"/></td>
+            </tr>
+
+		 </table>
+	}
+</body>
+</html>

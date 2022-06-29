@@ -1,0 +1,49 @@
+﻿@model IEnumerable<OnlineAdz.Models.Platform>
+
+@{
+    //Layout = "~Views/Shared/_Layout1.cshtml";
+    ViewData["Title"] = "Index";
+}
+
+<h1><u>Know About Ads</u></h1><br /><br />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.AdDescription)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.MainPlatform)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdDescription)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.MainPlatform)
+            </td>   
+            
+        </tr>
+}
+    </tbody>
+</table>

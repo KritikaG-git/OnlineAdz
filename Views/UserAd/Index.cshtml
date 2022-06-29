@@ -1,0 +1,90 @@
+﻿@model IEnumerable<OnlineAdz.Models.UserAd>
+
+@{
+   // Layout = "~Views/Shared/_Layout2.cshtml";
+    ViewData["Title"] = "Index";
+}
+
+<h1>User</h1>
+
+
+<p>
+    @using (Html.BeginForm("Index", "UserAd", FormMethod.Get))
+    {
+        <b>Search : </b>@Html.RadioButton("option","Email")<text>Email  </text>
+        @Html.RadioButton("option","AdName")<text>Ad Name</text><br />
+        @Html.TextBox("search") <input type="submit" name="submit" value="search" />
+    }
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AdId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserInterest)
+            </th>
+            
+            <th></th>
+
+        </tr>
+    </thead>
+   
+    <tbody>
+        @if (Model.Count()==0)
+        {
+            <tr>
+                <td colspan="6"> No match found </td>
+            </tr>
+        }
+        else
+        {
+            
+        
+        foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserInterest)
+            </td>
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AdId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AdId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AdId">Delete</a>
+            </td>
+        </tr>
+}
+}
+
+    </tbody>
+</table>
+
