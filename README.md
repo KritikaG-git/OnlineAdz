@@ -75,5 +75,5 @@ OnlineAdz
    ```bash
    dotnet ef database update
    dotnet run
-4. Open your browser and go to the as per terminal output
+4. Open your browser and go to the localhost as per terminal output
    
