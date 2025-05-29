@@ -15,7 +15,7 @@ To build a functional and user-friendly web application that allows:
 
 ## User Roles & Functionalities
 
-### 👨‍💼 Administrator:
+### Administrator:
 - Add, modify, view, and delete **ad categories**
 - View and manage **all user-posted ads**
 - Change **ad statuses** (active/inactive)
